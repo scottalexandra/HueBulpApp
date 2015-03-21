@@ -23,11 +23,8 @@ class HueHandler
       when body == "Red"
         light.hue == 36210
       when body == "Party Mode"
-        light.hue == 56100
-        transition_time = 1
-        light.hue == 36210
-        transition_time = 1
-        light.hue = 46920
+        transition_time = 50
+        light.set_state({:color_temperature => 1000}, transition_time)
       end
     end
   end
